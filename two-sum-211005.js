@@ -30,4 +30,4 @@ var twoSum2 = function(nums, target) {
 }
 
 
-// twoSum2([2,7,3,11,5], 9)
+twoSum2([2,7,3,11,5], 9)
