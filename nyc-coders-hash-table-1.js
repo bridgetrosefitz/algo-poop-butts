@@ -3,27 +3,7 @@ class HashTable {
     this.array = []
   }
 
-  // hash(string) {
-  //   const H   = 37;
-  //   let total = 0;
-
-  //   for (var i = 0; i < string.length; i++) {
-  //     total += H * total + string.charCodeAt(i);
-  //   }
-  //   total %= this.array.length;
-  //   if (total < 1) {
-  //     this.array.length -1
-  //   }
-  //   return parseInt(total);
-  // }
-
-
   hash(key, arrayLen) {
-    // console.log('key', key, 'arrayLen', arrayLen)
-
-    // if(arrayLen === 0){
-    //   return 0
-    // }
 
     let total = 0
 
