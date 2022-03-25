@@ -90,46 +90,48 @@ const b1 = [
   ['g', 'h', 'i'],
 ];
 
-printExpectation(
-  b1,
-  'bad',
-  [
-    { vertical: 0, horizontal: 1 },
-    { vertical: 0, horizontal: -1 },
-    { vertical: 1, horizontal: 0 },
-  ],
-  calculateWordJourney(b1, 'bad'),
-);
+calculateWordJourney(b1, 'bad')
 
-printExpectation(
-  b1,
-  'age',
-  [
-    { vertical: 0, horizontal: 0 },
-    { vertical: 2, horizontal: 0 },
-    { vertical: -1, horizontal: 1 },
-  ],
-  calculateWordJourney(b1, 'age'),
-);
+// printExpectation(
+//   b1,
+//   'bad',
+//   [
+//     { vertical: 0, horizontal: 1 },
+//     { vertical: 0, horizontal: -1 },
+//     { vertical: 1, horizontal: 0 },
+//   ],
+//   calculateWordJourney(b1, 'bad'),
+// );
 
-printExpectation(b1, '', [], calculateWordJourney(b1, ''));
+// printExpectation(
+//   b1,
+//   'age',
+//   [
+//     { vertical: 0, horizontal: 0 },
+//     { vertical: 2, horizontal: 0 },
+//     { vertical: -1, horizontal: 1 },
+//   ],
+//   calculateWordJourney(b1, 'age'),
+// );
 
-printExpectation([], '', [], calculateWordJourney(b1, ''));
+// printExpectation(b1, '', [], calculateWordJourney(b1, ''));
 
-// printExpectation(b1, 'back', [], calculateWordJourney(b1, 'back'));
+// printExpectation([], '', [], calculateWordJourney(b1, ''));
 
-function printExpectation(board, word, expected, actual) {
-  console.log(`Test ${testCase}`);
-  console.log('\n');
-  console.log(word);
-  printBoard(board);
-  console.log('\n');
-  console.log('expected', expected);
-  console.log('actual', actual);
-  console.log('\n');
-  testCase += 1;
-}
+// // printExpectation(b1, 'back', [], calculateWordJourney(b1, 'back'));
 
-function printBoard(board) {
-  board.forEach((row) => console.log(row));
-}
+// function printExpectation(board, word, expected, actual) {
+//   console.log(`Test ${testCase}`);
+//   console.log('\n');
+//   console.log(word);
+//   printBoard(board);
+//   console.log('\n');
+//   console.log('expected', expected);
+//   console.log('actual', actual);
+//   console.log('\n');
+//   testCase += 1;
+// }
+
+// function printBoard(board) {
+//   board.forEach((row) => console.log(row));
+// }
