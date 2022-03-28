@@ -40,28 +40,34 @@ const merge = intervals => {
   const arrayToBeReturned = []
   let leftPointer = 0
   let rightPointer = 1
-  let firstItemInInterval = intervals[0][0]
-  let secondItemInInterval
 
   while (rightPointer < intervals.length) {
-    if (intervals[leftPointer][1] >= intervals[rightPointer][0]) {
+    let firstItemInInterval = intervals[leftPointer][0]
+    let secondItemInInterval
+    let leftComparator = intervals[leftPointer][1]
+    let rightComparator = intervals[rightPointer][0]
+
+    // Find the first rightPointer where leftComparator IS NOT bigger than rightComparator
+    while (leftComparator >= rightComparator) {
       rightPointer++
+      rightComparator = intervals[rightPointer][0]
     }
 
-    console.log('rightPointer', rightPointer)
-
     secondItemInInterval = intervals[rightPointer - 1][1]
+    arrayToBeReturned.push([firstItemInInterval, secondItemInInterval])
     leftPointer = rightPointer
     rightPointer++
-
   }
-  arrayToBeReturned.push([firstItemInInterval, secondItemInInterval])
-  return arrayToBeReturned
 
+  arrayToBeReturned.push(firstItemInInterval, intervals[leftPointer][1])
+  // console.log(arrayToBeReturned)
+  return arrayToBeReturned
 }
 
 // console.log(merge([[1,4],[4,5]]))
 
-console.log(merge([[1, 3], [2, 6], [8, 10], [15, 18]]))
+console.log(
+  merge([[1, 3], [2, 6], [8, 10], [15, 18]])
+)
 
 // console.log(merge([[1,10],[2,6],[8,10],[15,18]]))
