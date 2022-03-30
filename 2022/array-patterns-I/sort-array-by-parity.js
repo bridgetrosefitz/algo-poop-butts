@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/sort-array-by-parity/
-// Attempt 220330
+// Attempted 220330
 // 18:20:50 to accepted solution
 // Runtime: 122 ms, faster than 31.63% of JavaScript online submissions for Sort Array By Parity.
 // Memory Usage: 44.6 MB, less than 58.46 % of JavaScript online submissions for Sort Array By Parity.
