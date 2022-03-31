@@ -36,16 +36,6 @@ const merge2 = function (nums1, m, nums2, n) {
   return nums1
 }
 
-
-
-
-
-
-
-
-
-
-
 // Attemped 220331
 // Wrong answer submitted in 38:33:42
 const merge = function (nums1, m, nums2, n) {
