@@ -1,44 +1,77 @@
 // SORT
 // 
 
-// BUCKET SORT (On)
+// BUCKET SORT - O(n)
 
 
 // Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
 
- 
-
 // Example 1:
-
 // Input: nums = [1,1,1,2,2,3,3], k = 2
 // Output: [1,2] or [1,3]
-// Example 2:
 
+// Example 2:
 // Input: nums = [1], k = 1
 // Output: [1]  
 
+// Clues / options
+// use Object.items()
+// use freq_bucket =[[],[],[2,3],[1]]
 
-nums = [1,1,1,2,2,3]
 
-hashmap = {
-  1: 3,
-  2: 2,
-  3: 2
+const bucketSort = (nums, k) => {
+    const results = []
+    const frequencyBucket = new Array(nums.length + 1).fill([])
+    const mapOfFrequencies = {}
+
+    nums.forEach(element => {
+        mapOfFrequencies[element] = (mapOfFrequencies[element] ?? 0) + 1
+    })
+
+    const interimFrequencies = Object.entries(mapOfFrequencies)
+
+    interimFrequencies.forEach(subArray => {
+
+        const number = parseInt(subArray[0])
+        const frequency = subArray[1]
+
+        frequencyBucket[frequency].push(number)
+        
+    })
+
+    
 }
 
 
-Object.items()
-
-freq_bucket = new Array(nums.length)
-
-// freq_bucket =[[],[],[2,3],[1]]
-
-
-console.log(freq_bucket)
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Answer
 var topKFrequent = function(nums, k) {
     const myMap = new Map();
     
