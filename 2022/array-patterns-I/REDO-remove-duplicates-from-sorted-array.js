@@ -1,44 +1,29 @@
 // https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 
 // Attempted 220602
+// No solution reached in 20mins
 
-// e.g. [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+// Solution from research https://www.youtube.com/watch?v=rlfsnRY0S9k&ab_channel=TerribleWhiteboard
+// Accepted:
+// Runtime: 84 ms, faster than 78.62 % of JavaScript online submissions for Remove Duplicates from Sorted Array.
+// Memory Usage: 44.6 MB, less than 74.06 % of JavaScript online submissions for Remove Duplicates from Sorted Array.
 
-// Create k and make it equal to 1
-// Create currentHighest, and make it equal to nums[0]
-// Create endPointer and make it equal to nums.length - 1
-// Create leftPointer and make it 0
-// Create rightPointer and make it 1
+const removeDuplicates = function(nums) {
 
-// [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
-//  |  |                       |
- 
-//  k = 1
-//  currentHighest = 0
+  let leftPointer = 0
+  let rightPointer = 1
 
-// If value at currentHighest is equal to or more than the value at endPointer, return k
+  while (rightPointer < nums.length) {
+    if (nums[rightPointer] !== nums[leftPointer]) {
+      nums[leftPointer + 1] = nums[rightPointer]
+      leftPointer++
+    }
+    rightPointer++
+  }
 
-// If the value at rightPointer === the value of currentHighest: 
-// >> swap the value at the rightPointer with the value at the endPointer
+  return leftPointer + 1
 
-// Else:
-// If the value at rightPointer < the value at leftPointer:
-// >> swap the value at the rightPointer with the value at leftPointer
-// >> increment k
-
-// Increment rightPointer
-// Increment leftPointer
-
-// [0, 4, 1, 1, 1, 2, 2, 3, 3, 0]
-//     |  |                 | 
-
-// [0, 1, 4, 1, 1, 2, 2, 3, 3, 0]
-//        |  |              |
-
-
-
-
-
+}
 
 
 
